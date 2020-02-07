@@ -1,9 +1,15 @@
-declare module "@capacitor/core" {
+declare global {
   interface PluginRegistry {
-    CapacitorIntercomPush: CapacitorIntercomPushPlugin;
+    CapacitorIntercomPush: CapacitorIntercomPushProtocol;
   }
 }
 
-export interface CapacitorIntercomPushPlugin {
+export interface CapacitorIntercomPushProtocol {
+  registerIdentifiedUser(options: {
+    userId?: string;
+    email?: string;
+  }): Promise<void>;
+  logout(): Promise<void>;
+  displayMessenger(): Promise<void>;
   echo(options: { value: string }): Promise<{value: string}>;
 }
