@@ -1,6 +1,6 @@
 {
   "name": "capacitor-intercom-push",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Register for push with Intercom",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

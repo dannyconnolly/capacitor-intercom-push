@@ -1,27 +1,27 @@
 import { Plugins } from '@capacitor/core';
 import { CapacitorIntercomPushProtocol } from './definitions';
 
-const { CapacitorIntercomPushPlugin } = Plugins;
+const { CapacitorIntercomPush } = Plugins;
 
-export class CapacitorIntercomPush implements CapacitorIntercomPushProtocol {
+export class CapacitorIntercom implements CapacitorIntercomPushProtocol {
   registerIdentifiedUser(options: {
     userId?: string;
     email?: string;
   }): Promise<void> {
-    return CapacitorIntercomPushPlugin.registerIdentifiedUser(options);
+    return CapacitorIntercomPush.registerIdentifiedUser(options);
   }
 
   logout(): Promise<void> {
-    return CapacitorIntercomPushPlugin.logout();
+    return CapacitorIntercomPush.logout();
   }
 
   displayMessenger(): Promise<void> {
-    return CapacitorIntercomPushPlugin.displayMessenger();
+    return CapacitorIntercomPush.displayMessenger();
   }
 
   echo(options: {
     value?: string;
   }): Promise<{value: string}> {
-    return CapacitorIntercomPushPlugin.echo(options);
+    return CapacitorIntercomPush.echo(options);
   }
 }
